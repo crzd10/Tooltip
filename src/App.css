@@ -1,0 +1,130 @@
+:root {
+  --tooltip-bg: #00d1b2;
+  --dark: #000;
+  --light: #fff;
+  --danger: #e51616;
+  --success: #02b911;
+  --primary: #2226e3;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light);
+  height: 100vh;
+  text-align: center;
+  background-color: #50696d;
+  font-size: calc(5px + 2vmin);
+}
+
+.tooltip {
+  position: absolute;
+  padding: 15px 5px;
+  color: var(--light);
+  min-width: 100px;
+  transition-duration: 200ms;
+  transition-property: opacity, transform;
+  transform-origin: center center;
+  text-align: center;
+}
+
+.tooltip--top {
+  transform: translate(-50%, -15px) scale(0);
+}
+
+.tooltip--bottom {
+  transform: translate(-50%, 15px) scale(0);
+}
+
+.tooltip--left {
+  transform: translate(-15px, -50%) scale(0);
+}
+
+.tooltip--right {
+  transform: translate(15px, -50%) scale(0);
+}
+
+.tooltip--primary {
+  background-color: var(--primary);
+}
+
+.tooltip--danger {
+  background-color: var(--danger);
+}
+
+.tooltip--success {
+  background-color: var(--success);
+}
+
+.tooltip--primary--after {
+  border-right-color: var(--primary);
+  border-left-color: var(--primary);
+  border-top-color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.tooltip--danger--after {
+  border-right-color: var(--danger);
+  border-left-color: var(--danger);
+  border-top-color: var(--danger);
+  border-bottom-color: var(--danger);
+}
+
+.tooltip--success--after {
+  border-right-color: var(--success);
+  border-left-color: var(--success);
+  border-top-color: var(--success);
+  border-bottom-color: var(--success);
+}
+
+
+.tooltip::after {
+  border: solid transparent;
+  content: '';
+  position: absolute;
+  border-width: 7px;
+}
+
+.tooltip--top::after {
+  top: 100%;
+  left: 50%;
+  border-top-color: inherit;
+  margin-left: -6px;
+}
+
+
+.tooltip--bottom::after {
+  bottom: 100%;
+  left: 50%;
+  border-bottom-color: inherit;
+  margin-left: -6px;
+  border-width: 7px;
+}
+
+.tooltip--left::after {
+  top: 50%;
+  left: 100%;
+  border-left-color: inherit;
+  margin-top: -6px;
+}
+
+.tooltip--right::after {
+  top: 50%;
+  right: 100%;
+  border-right-color: inherit;
+  margin-top: -6px;
+}
+
+button {
+  border-radius: 10%;
+  padding: 1%;
+  margin-bottom: 2%;
+}
+
+.title {
+  text-decoration-line: underline;
+  font-weight: 700;
+}
